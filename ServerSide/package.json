@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "latest",
+    "cors": "^2.8.4",
     "express": "latest",
     "morgan": "latest",
     "tslint-config-airbnb": "^5.4.2"

@@ -7,8 +7,12 @@ import { AboutService } from '../../services/about/about.service';
   encapsulation: ViewEncapsulation.None
 })
 export class AboutComponentComponent implements OnInit {
-
-  constructor(private aboutService:AboutService) { }
+  aboutData:string;
+  constructor(private aboutService:AboutService) {
+    this.aboutService.getAbout().subscribe((data) => {
+      this.aboutData=data;
+    });
+   }
 
   ngOnInit() {
   }

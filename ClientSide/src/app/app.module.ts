@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
+import {Config} from './config/config';
+
 import { MenuComponentComponent } from './components/menu-component/menu-component.component';
 import { AboutComponentComponent } from './components/about-component/about-component.component';
 import { HomeComponent } from './components/home/home.component';
@@ -47,7 +49,7 @@ const routes:Routes=[
     FormsModule,
     HttpModule
   ],
-  providers: [AboutService],
+  providers: [AboutService,Config],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
