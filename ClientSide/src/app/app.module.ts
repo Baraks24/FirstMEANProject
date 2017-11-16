@@ -16,7 +16,8 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { XoVsPlayerComponent } from './components/Games/xo/xo-vs-player/xo-vs-player.component';
 import { XoVsServerComponent } from './components/Games/xo/xo-vs-server/xo-vs-server.component';
 import { ChatComponent } from './components/chat/chat.component';
-import { AboutService } from './services/about/about.service';
+import { DataService } from './services/data/data.service';
+import { UsersComponentComponent } from './components/users-component/users-component.component';
 
 
 
@@ -28,7 +29,8 @@ const routes:Routes=[
   {path:'Snake',component:SnakeComponent},
   {path:'XO/vsPlayer',component:XoVsPlayerComponent},
   {path:'XO/vsServer',component:XoVsServerComponent},
-  {path:'chat',component:ChatComponent}
+  {path:'chat',component:ChatComponent},
+  {path:'users',component:UsersComponentComponent}
 ]
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ const routes:Routes=[
     SideBarComponent,
     XoVsPlayerComponent,
     XoVsServerComponent,
-    ChatComponent
+    ChatComponent,
+    UsersComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ const routes:Routes=[
     FormsModule,
     HttpModule
   ],
-  providers: [AboutService,Config],
+  providers: [DataService,Config],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

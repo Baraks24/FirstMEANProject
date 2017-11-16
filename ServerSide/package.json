@@ -12,7 +12,10 @@
     "body-parser": "latest",
     "cors": "^2.8.4",
     "express": "latest",
+    "mongoose": "^4.13.3",
     "morgan": "latest",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "tslint-config-airbnb": "^5.4.2"
   }
 }

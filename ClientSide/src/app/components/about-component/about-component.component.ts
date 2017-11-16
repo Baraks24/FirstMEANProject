@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { AboutService } from '../../services/about/about.service';
+import { DataService } from '../../services/data/data.service';
 @Component({
   selector: 'app-about-component',
   templateUrl: './about-component.component.html',
@@ -8,8 +8,8 @@ import { AboutService } from '../../services/about/about.service';
 })
 export class AboutComponentComponent implements OnInit {
   aboutData:string;
-  constructor(private aboutService:AboutService) {
-    this.aboutService.getAbout().subscribe((data) => {
+  constructor(private dataService:DataService) {
+    this.dataService.getAbout().subscribe((data) => {
       this.aboutData=data;
     });
    }
