@@ -1,0 +1,17 @@
+{
+  "name": "serverside",
+  "version": "1.0.0",
+  "description": "Barak's project",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Barak Steindl",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "morgan": "latest",
+    "tslint-config-airbnb": "^5.4.2"
+  }
+}
