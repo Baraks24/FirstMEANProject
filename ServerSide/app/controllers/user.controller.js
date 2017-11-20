@@ -44,18 +44,19 @@ exports.signup = function (req, res, next) {
             }
         });
     }
-    else{
-        res.status(200).send({message:'ok'});
+    else {
+        res.status(200).send({ message: 'ok' });
     }
 };
 
-exports.signout = function (req, res) {
+exports.signout = function (req, res, next) {
     req.logout();
     res.status(200).send({ message: 'OK' });
 };
 
+
 exports.login = function (req, res, next) {
-    passport.authenticate('local',function (err, user, info) {
+    passport.authenticate('local', function (err, user, info) {
         if (err) {
             res.status(500).send(err);
         }
@@ -83,6 +84,17 @@ exports.create = function (req, res, next) {
         }
         else {
             res.status(200).send(user);
+        }
+    });
+}
+
+exports.update = function (req, res, next) {
+    User.update({'_id':req.user._id},{$set:req.body},(err,user) => {
+        if (err) {
+            return res.status(500).send(err);
+        }
+        else {
+            res.status(200).send({message:'OK'});
         }
     });
 }

@@ -25,6 +25,9 @@
     <li class="nav-item">
       <a  [ngClass]="(whatIsActive=='users')?'active':''"  (click)="clicked('users')" class="nav-link" [routerLink]="['/users']">users</a>
     </li>
+    <li *ngIf="authenticationService.user" class="nav-item">
+      <a  [ngClass]="(whatIsActive=='disconnect')?'active':''"  (click)="clicked('disconnect');disconnect()" class="nav-link" [routerLink]="['/home']">Disconnect</a>
+    </li>
 
 
   

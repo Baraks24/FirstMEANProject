@@ -47,7 +47,21 @@ export class SignComponent implements OnInit {
       localStorage.setItem('user', JSON.stringify(data));
       this.authenticationService.user = data;
     });
-  }
+  };
+
+  updateUser():void{
+    this.authenticationService.updateUser(this.updateForm.value.email,this.updateForm.value.firstName,this.updateForm.value.lastName).subscribe(
+      (data) => {
+        if(data.message == 'OK'){
+          this.authenticationService.user['email'] = this.updateForm.value.email!=null?this.updateForm.value.email:this.authenticationService.user['email'];
+          this.authenticationService.user['firstName'] = this.updateForm.value.firstName!=null?this.updateForm.value.firstName:this.authenticationService.user['firstName'];
+          this.authenticationService.user['lastName'] = this.updateForm.value.lastName!=null?this.updateForm.value.lastName:this.authenticationService.user['lastName'];
+          localStorage.setItem('user', JSON.stringify(this.authenticationService.user));
+        }
+       
+      }
+    );
+  };
 
 
   login(): void {

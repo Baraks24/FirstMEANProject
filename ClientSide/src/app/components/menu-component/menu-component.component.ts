@@ -27,6 +27,13 @@ export class MenuComponentComponent implements OnInit {
     this.whatIsActive=entity;
   }
 
+  disconnect():void{
+    this.authenticationService.disconnect().subscribe((data) => {
+      this.authenticationService.user = null;
+      localStorage.removeItem('user');
+    });
+  }
+
   
 
 }

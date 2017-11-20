@@ -10,7 +10,7 @@ const cors = require('cors');
 module.exports = function (passport) {
     const app = express();
     //app.use(cors());
-
+    app.use(morgan('tiny'));
     app.use(function (req, res, next) {
         res.header('Access-Control-Allow-Credentials', true);
         res.header('Access-Control-Allow-Origin', req.headers.origin);
@@ -23,7 +23,7 @@ module.exports = function (passport) {
         }
     });
 
-    app.use(morgan('tiny'));
+    
     app.use(cookieParser(config.sessionSecret));
     app.use(bodyParser.json());
     app.use(session({
