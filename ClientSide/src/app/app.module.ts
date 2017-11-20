@@ -4,6 +4,7 @@ import { RouterModule,Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {HttpModule} from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import {Config} from './config/config';
 
@@ -17,7 +18,9 @@ import { XoVsPlayerComponent } from './components/Games/xo/xo-vs-player/xo-vs-pl
 import { XoVsServerComponent } from './components/Games/xo/xo-vs-server/xo-vs-server.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { DataService } from './services/data/data.service';
+import { AuthenticationService } from './services/authentication/authentication.service';
 import { UsersComponentComponent } from './components/users-component/users-component.component';
+import { SignComponent } from './components/sign/sign.component';
 
 
 
@@ -30,7 +33,8 @@ const routes:Routes=[
   {path:'XO/vsPlayer',component:XoVsPlayerComponent},
   {path:'XO/vsServer',component:XoVsServerComponent},
   {path:'chat',component:ChatComponent},
-  {path:'users',component:UsersComponentComponent}
+  {path:'users',component:UsersComponentComponent},
+  {path:'signup',component:SignComponent}
 ]
 @NgModule({
   declarations: [
@@ -44,15 +48,17 @@ const routes:Routes=[
     XoVsPlayerComponent,
     XoVsServerComponent,
     ChatComponent,
-    UsersComponentComponent
+    UsersComponentComponent,
+    SignComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
-  providers: [DataService,Config],
+  providers: [DataService,AuthenticationService,Config],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

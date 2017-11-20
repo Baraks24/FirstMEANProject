@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http,Response} from '@angular/http';
+import {Http,Response,RequestOptions} from '@angular/http';
 import {Config} from '../../config/config';
 @Injectable()
 export class DataService {
@@ -9,7 +9,7 @@ export class DataService {
    }
 
    getAbout(){
-    return this.http.get(this.config.apiUrl+'/about').map((res:Response) => res.json().data);
+    return this.http.get(this.config.apiUrl+'/about',{withCredentials: true}).map((res:Response) => res.json().data);
    }
 
    getUsers(){

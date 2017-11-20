@@ -1,0 +1,55 @@
+<form *ngIf="!authenticationService.user" [formGroup]="signForm">
+  <div class="form-group">
+    <label for="inputEmail">Email address</label>
+    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+  </div>
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
+  </div>
+  <div class="form-group">
+    <label for="inputFirstName">First name</label>
+    <input type="text" class="form-control" id="inputFirstName" placeholder="Password" formControlName="firstName">
+  </div>
+  <div class="form-group">
+    <label for="inputLastName">Last name</label>
+    <input type="text" class="form-control" id="inputLastName" placeholder="Password" formControlName="lastName">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="submitForm()">Submit</button>
+</form>
+
+<br>
+<br>
+
+
+<form *ngIf="!authenticationService.user" [formGroup]="loginForm">
+  <div class="form-group">
+    <label for="loginEmail">Email address</label>
+    <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email">
+  </div>
+  <div class="form-group">
+    <label for="loginPassword">Password</label>
+    <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+</form>
+
+
+<form *ngIf="authenticationService.user" [formGroup]="updateForm">
+  <div class="form-group">
+    <label for="inputEmail">Email address</label>
+    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email"
+    [value]="authenticationService.user.email">
+  </div>
+  <div class="form-group">
+    <label for="inputFirstName">First name</label>
+    <input type="text" class="form-control" id="inputFirstName" placeholder="firstName" formControlName="firstName"
+    [value]="authenticationService.user.firstName">
+  </div>
+  <div class="form-group">
+    <label for="inputLastName">Last name</label>
+    <input type="text" class="form-control" id="inputLastName" placeholder="lastName" formControlName="lastName"
+    [value]="authenticationService.user.lastName">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="submitForm()">Submit</button>
+</form>

@@ -10,12 +10,16 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "latest",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
+    "crypto": "^1.0.1",
     "express": "latest",
+    "express-session": "^1.15.6",
     "mongoose": "^4.13.3",
     "morgan": "latest",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "session": "^0.1.0",
     "tslint-config-airbnb": "^5.4.2"
   }
 }

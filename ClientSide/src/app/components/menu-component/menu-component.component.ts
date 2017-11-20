@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {Classes} from './interfaces/classes'
+import {Classes} from './interfaces/classes';
+import { AuthenticationService } from '../../services/authentication/authentication.service';
 
 
 @Component({
@@ -11,7 +12,13 @@ import {Classes} from './interfaces/classes'
 
 export class MenuComponentComponent implements OnInit {
   whatIsActive:string = 'home';
-  constructor() {
+  constructor(public authenticationService:AuthenticationService) {
+    const userToParse = localStorage.getItem('user');
+    let user =  userToParse? JSON.parse(userToParse) : undefined;
+    if (user) {
+      this.authenticationService.user = user;
+      
+    }
    }
   ngOnInit() {
   }
