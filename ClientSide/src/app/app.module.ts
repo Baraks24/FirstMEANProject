@@ -19,6 +19,7 @@ import { XoVsServerComponent } from './components/Games/xo/xo-vs-server/xo-vs-se
 import { ChatComponent } from './components/chat/chat.component';
 import { DataService } from './services/data/data.service';
 import { AuthenticationService } from './services/authentication/authentication.service';
+import { ChatService } from './services/chat/chat.service';
 import { UsersComponentComponent } from './components/users-component/users-component.component';
 import { SignComponent } from './components/sign/sign.component';
 
@@ -58,7 +59,7 @@ const routes:Routes=[
     HttpModule,
     ReactiveFormsModule
   ],
-  providers: [DataService,AuthenticationService,Config],
+  providers: [DataService,AuthenticationService,ChatService,Config],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
