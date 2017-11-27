@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { XoVsPlayerComponent } from './xo-vs-player.component';
+import { XoComponent } from './xo.component';
 
-describe('XoVsPlayerComponent', () => {
-  let component: XoVsPlayerComponent;
-  let fixture: ComponentFixture<XoVsPlayerComponent>;
+describe('XoComponent', () => {
+  let component: XoComponent;
+  let fixture: ComponentFixture<XoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ XoVsPlayerComponent ]
+      declarations: [ XoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(XoVsPlayerComponent);
+    fixture = TestBed.createComponent(XoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

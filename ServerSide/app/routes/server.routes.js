@@ -1,3 +1,4 @@
+var XO = require('../controllers/xo.controller');
 module.exports = function(app){
     app.route('/about').get((req,res)=>{
         let message;
@@ -9,4 +10,6 @@ module.exports = function(app){
         }
         res.status(200).send({data:message});
     });
+
+    app.route('/getServerMove').post(XO.getServerMove);
 }

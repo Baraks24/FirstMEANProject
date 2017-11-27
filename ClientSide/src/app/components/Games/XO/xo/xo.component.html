@@ -1,0 +1,32 @@
+<table *ngIf="xoService.gameStarted">
+  <tr *ngFor="let row of xoService.grid;let i = index">
+    <td *ngFor="let col of xoService.grid[i]; let j=index">
+      <button class="button {{i}}{{j}}" (mouseover)="overButton(i,j)" (mouseleave)="leaveButton(i,j)" (click)="xoService.click(i,j)">{{col}}</button>
+    </td>
+  </tr>
+</table>
+
+
+<mat-card *ngIf="xoService.gameStarted&&xoService.currPlayer!=xoService.playerSign">It's the server's turn</mat-card>
+<mat-card *ngIf="xoService.gameStarted&&xoService.currPlayer==xoService.playerSign">It's your turn</mat-card>
+
+
+<div *ngIf="!xoService.gameStarted">
+  <p>Choose X/O:</p>
+  <mat-radio-group class="example-radio-group" [(ngModel)]="xoService.playerSign">
+    <mat-radio-button class="example-radio-button" *ngFor="let op of XorO" [value]="op">
+      {{op}}
+      <br>
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <p>Choose who will start:</p>
+  <mat-radio-group class="example-radio-group" [(ngModel)]="xoService.whoStarts">
+    <mat-radio-button class="example-radio-button" *ngFor="let who of whoStarts" [value]="who">
+      {{who}}
+      <br>
+    </mat-radio-button>
+  </mat-radio-group>
+<br>
+  <button mat-button class="start" (click)="xoService.start()">Start Game!</button>
+</div>

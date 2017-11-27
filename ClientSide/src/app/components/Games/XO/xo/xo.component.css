@@ -1,0 +1,18 @@
+
+mat-card{
+    width:30%;
+}
+table{
+    margin-left:40%;
+    margin-top:5%;
+}
+.button{
+    width:70px;
+    height:70px;
+    background-color: rgb(52, 152, 219);
+    border-style:groove;
+    border-color:black;
+}
+.start{
+    background-color: rgb(43, 199, 23);
+}

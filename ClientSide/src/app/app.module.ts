@@ -8,20 +8,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import {Config} from './config/config';
 
+
 import { MenuComponentComponent } from './components/menu-component/menu-component.component';
 import { AboutComponentComponent } from './components/about-component/about-component.component';
 import { HomeComponent } from './components/home/home.component';
-import { XoComponent } from './components/Games/xo/xo.component';
 import { SnakeComponent } from './components/Games/snake/snake.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
-import { XoVsPlayerComponent } from './components/Games/xo/xo-vs-player/xo-vs-player.component';
-import { XoVsServerComponent } from './components/Games/xo/xo-vs-server/xo-vs-server.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { DataService } from './services/data/data.service';
 import { AuthenticationService } from './services/authentication/authentication.service';
+import {XoService} from './services/XO/xo.service';
 import { ChatService } from './services/chat/chat.service';
 import { UsersComponentComponent } from './components/users-component/users-component.component';
 import { SignComponent } from './components/sign/sign.component';
+import { XoComponent } from './components/Games/XO/xo/xo.component';
+
+import {MatRadioModule,MatButtonModule,MatCardModule} from '@angular/material';
 
 
 
@@ -31,8 +33,6 @@ const routes:Routes=[
   {path:'home',component:HomeComponent},
   {path:'XO',component:XoComponent},
   {path:'Snake',component:SnakeComponent},
-  {path:'XO/vsPlayer',component:XoVsPlayerComponent},
-  {path:'XO/vsServer',component:XoVsServerComponent},
   {path:'chat',component:ChatComponent},
   {path:'users',component:UsersComponentComponent},
   {path:'signup',component:SignComponent}
@@ -46,20 +46,22 @@ const routes:Routes=[
     XoComponent,
     SnakeComponent,
     SideBarComponent,
-    XoVsPlayerComponent,
-    XoVsServerComponent,
     ChatComponent,
     UsersComponentComponent,
-    SignComponent
+    SignComponent,
+    XoComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatButtonModule,
+    MatCardModule
   ],
-  providers: [DataService,AuthenticationService,ChatService,Config],
+  providers: [DataService,AuthenticationService,ChatService,Config,XoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
